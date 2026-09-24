@@ -1,0 +1,58 @@
+import { DEFocusArea } from '../types';
+
+export const DE_FOCUS_AREAS: DEFocusArea[] = [
+  {
+    id: 'hashing',
+    title: 'Hashing & Deduplication',
+    tagline: 'Frequency counting, deduplication & broadcast lookups',
+    description: 'Hash tables mirror key-value caches, SQL GROUP BY aggregations, and PySpark broadcast hash joins. Understanding how hashes distribute data helps you prevent data skew and out-of-memory errors.',
+    icon: 'Hash',
+    realWorldDE: 'Primary key deduplication, finding duplicates in millions of records, and implementing fast in-memory dictionary lookups.',
+    topPatterns: ['HashMap Lookup', 'HashSet Deduplication', 'Frequency Counting'],
+  },
+  {
+    id: 'sliding-window',
+    title: 'Sliding Windows & Streams',
+    tagline: 'Continuous state tracking over time windows',
+    description: 'Sliding window algorithms are the software engineering prerequisite for Apache Flink, Spark Streaming, and Kafka windowing operations (tumbling, sliding, session windows).',
+    icon: 'Activity',
+    realWorldDE: 'Real-time anomaly detection, rolling 5-minute revenue counters, and session inactivity threshold calculations.',
+    topPatterns: ['Fixed Window', 'Dynamic Window Shrinking', 'State Maintenance'],
+  },
+  {
+    id: 'sorting',
+    title: 'Sorting & Interval Processing',
+    tagline: 'Ordering, merging, and time-interval reconciliation',
+    description: 'Distributed engines (Spark, Hive, Snowflake) spend the majority of compute cycles in Shuffle & Sort phases. Interval algorithms are required for temporal dimension modeling and event sessionization.',
+    icon: 'ArrowUpDown',
+    realWorldDE: 'Merging overlapping user subscription intervals, external sort-merge joins, and collapsing consecutive log events.',
+    topPatterns: ['Interval Merging', 'Sort-Merge Join Phase', 'Two Pointers'],
+  },
+  {
+    id: 'heap',
+    title: 'Heaps & Top-K Streaming',
+    tagline: 'Bounded-memory ranking on massive datasets',
+    description: 'Instead of sorting a billion rows to get top 10 items (O(N log N)), priority queues allow processing unbounded streams in O(N log K) time with strict O(K) memory limits.',
+    icon: 'TrendingUp',
+    realWorldDE: 'Real-time leaderboard calculations, K-way external file merge during ETL loads, and continuous P50/P99 latency calculations.',
+    topPatterns: ['Min-Heap of Size K', 'Two-Heap Median', 'K-Way Merge'],
+  },
+  {
+    id: 'binary-search',
+    title: 'Binary Search & File Indexing',
+    tagline: 'Logarithmic retrieval in sorted data formats',
+    description: 'Modern columnar formats like Apache Parquet and ORC rely on dictionary encoding and sorted row-group statistics (min/max headers) to skip data via binary search.',
+    icon: 'Search',
+    realWorldDE: 'Partition pruning, skipping irrelevant row groups in data lakes, and fast lookups in sorted B+ Trees.',
+    topPatterns: ['Divide & Conquer', 'Search Rotated Space', 'Boundary Bisecting'],
+  },
+  {
+    id: 'monotonic-stack-dags',
+    title: 'Stacks, Monotonic Queues & DAGs',
+    tagline: 'Window functions, syntax parsing & dependency graphs',
+    description: 'Monotonic stacks power SQL LEAD() and LAG() analytical window functions, while graph cycle detection protects Airflow, dbt, and Prefect pipeline execution DAGs.',
+    icon: 'GitFork',
+    realWorldDE: 'Cycle validation in dbt models, AST parsing for SQL formatters/linters, and computing next-event latency spikes.',
+    topPatterns: ['Monotonic Stack', 'Floyd Cycle Detection', 'LIFO Syntax Tree'],
+  },
+];
